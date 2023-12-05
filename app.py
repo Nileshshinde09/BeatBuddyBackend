@@ -4,13 +4,11 @@ from apiHandler import *
 from getInfo import *
 from trending import *
 import mongodb
-import inspect
 
 app= Flask(__name__)
 
 # mongodb.connect()
-if not hasattr(inspect, 'getargspec'):
-    inspect.getargspec = inspect.getfullargspec
+
 
 @app.route('/',methods=['GET'])
 def home():

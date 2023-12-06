@@ -1,9 +1,10 @@
-import pandas as pd
 from csv import DictReader
 import random
 from imports import *
+import pandas as pd
 from apiHandler import ArtistImage,AlbumImage
 original=pd.read_csv('data/cleaned_dataset.csv')
+df= pd.read_csv('data/cleaned_dataset.csv')
 def showTrending(df,w1=0.6, w2=0.3, w3=0.1):
     # df=df[df['Album']=='single']
     trendingdf=df[['Artist','Track','Album','Views','Likes','Comments']]
@@ -119,7 +120,7 @@ def TopAlbum(changesoccurs=False):
             return final_dict
 
 if __name__=="__main__":
-    df= pd.read_csv('data/cleaned_dataset.csv')
+    
     TrendingArtist()
     TrendingAlbum()
     TopArtist()

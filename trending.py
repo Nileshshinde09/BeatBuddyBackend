@@ -99,9 +99,7 @@ def TopAlbum(changesoccurs=False):
         resdf.to_csv('data/trending_album.csv') 
     else:
         with open("data/trending_album.csv",encoding="utf8") as f:
-            print("Hello world")
             file=pd.read_csv(f)
-            print(file)
             albums=file['Album'].to_list()
             random.shuffle(albums)
             original=pd.read_csv('data/cleaned_dataset.csv')
@@ -116,7 +114,9 @@ def TopAlbum(changesoccurs=False):
                     Licensed=original[original['Album']==val]['Licensed'].values[0]
                     Url=file[file['Album']==val]['url'].values[0]
                     Index=i
-                except Exception:
+                    print("Hi")
+                except Exception as e:
+                    print(e)
                     continue
                 final_dict[str(i)+"_"+val]=[val,Artist,Album,Views,Likes,Comments,Licensed,Url,Index]
             return final_dict

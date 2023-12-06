@@ -67,16 +67,16 @@ def generate_recommendation(song_title, model_type=None, num=None, model_name=No
     # Get song indices
     index = indices[song_title]
     
-    # # Get list of songs for given song
-    # score = model_type[index, :].tolist()
+    # Get list of songs for given song
+    score = model_type[index, :].tolist()
         
-    # # Sort the most similar songs
-    # similarity_score = sorted(enumerate(score), key=lambda x: x[1], reverse=True)
-
-    score=list(enumerate(model_type[indices[song_title]]))
-    
     # Sort the most similar songs
-    similarity_score = sorted(score,key = lambda x:x[1],reverse = True)
+    similarity_score = sorted(enumerate(score), key=lambda x: x[1], reverse=True)
+
+    # score=list(enumerate(model_type[indices[song_title]]))
+    
+    # # Sort the most similar songs
+    # similarity_score = sorted(score,key = lambda x:x[1],reverse = True)
 
     
     # Select the top-n recommend songs

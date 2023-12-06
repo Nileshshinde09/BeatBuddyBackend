@@ -112,9 +112,9 @@ def TopAlbum(changesoccurs=False):
                     Likes=original[original['Album']==val]['Likes'].values[0]
                     Comments=original[original['Album']==val]['Comments'].values[0]
                     Licensed=original[original['Album']==val]['Licensed'].values[0]
+                    print(file[file['Album']==val]['url'].values[0])
                     Url=file[file['Album']==val]['url'].values[0]
                     Index=i
-                    print("Hi")
                 except Exception as e:
                     print(e)
                     continue

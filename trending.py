@@ -106,17 +106,17 @@ def TopAlbum(changesoccurs=False):
             final_dict={}
             for i,val in enumerate(albums):
                 try:
+                    print("HI")
+                    print(val)
                     Artist=original[original['Album']==val]['Artist'].values[0]
                     Album=val
                     Views=original[original['Album']==val]['Views'].values[0]
                     Likes=original[original['Album']==val]['Likes'].values[0]
                     Comments=original[original['Album']==val]['Comments'].values[0]
                     Licensed=original[original['Album']==val]['Licensed'].values[0]
-                    print(file[file['Album']==val]['url'].values[0])
                     Url=file[file['Album']==val]['url'].values[0]
                     Index=i
                 except Exception as e:
-                    print(e)
                     continue
                 final_dict[str(i)+"_"+val]=[val,Artist,Album,Views,Likes,Comments,Licensed,Url,Index]
             return final_dict

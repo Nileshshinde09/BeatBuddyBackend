@@ -7,7 +7,7 @@ import mongodb
 
 app= Flask(__name__)
 
-# mongodb.connect()
+mongodb.connect()
 
 
 @app.route('/',methods=['GET'])

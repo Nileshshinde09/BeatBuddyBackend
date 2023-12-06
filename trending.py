@@ -99,7 +99,9 @@ def TopAlbum(changesoccurs=False):
         resdf.to_csv('data/trending_album.csv') 
     else:
         with open("data/trending_album.csv",encoding="utf8") as f:
+            print("Hello world")
             file=pd.read_csv(f)
+            print(file)
             albums=file['Album'].to_list()
             random.shuffle(albums)
             original=pd.read_csv('data/cleaned_dataset.csv')

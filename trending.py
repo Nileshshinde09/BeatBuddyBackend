@@ -1,10 +1,8 @@
 import pandas as pd
 from csv import DictReader
 import random
-import pickle
 from imports import *
 from apiHandler import ArtistImage,AlbumImage
-import json
 original=pd.read_csv('data/cleaned_dataset.csv')
 def showTrending(df,w1=0.6, w2=0.3, w3=0.1):
     # df=df[df['Album']=='single']

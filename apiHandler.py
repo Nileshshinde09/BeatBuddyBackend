@@ -1,10 +1,10 @@
 from imports import *
 
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_secret='dcffd029266947f1b019245ec3a8aabd',client_id='847de36f322d48cfb6b22f213925fd71'))
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
 
 def ArtistTopTracks(name='Red Hot Chili Peppers'):
-    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_secret='dcffd029266947f1b019245ec3a8aabd',client_id='847de36f322d48cfb6b22f213925fd71'))
+    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
     name=name.strip()
 
@@ -36,7 +36,7 @@ def ArtistTopTracks(name='Red Hot Chili Peppers'):
 def ArtistImage(name):
     try:
 
-        spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_secret='dcffd029266947f1b019245ec3a8aabd',client_id='847de36f322d48cfb6b22f213925fd71'))
+        spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
         results = spotify.search(q='artist:' + name, type='artist')
         items = results['artists']['items']
@@ -48,7 +48,7 @@ def ArtistImage(name):
 
 def AlbumImage(name): 
     try:  
-        spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_secret='dcffd029266947f1b019245ec3a8aabd',client_id='847de36f322d48cfb6b22f213925fd71'))
+        spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
         results = spotify.search(q='album:' + name, type='album')
         items = results['albums']['items']
@@ -58,7 +58,7 @@ def AlbumImage(name):
     except Exception :
         return False   
 def NameToId(name):
-    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(client_secret='dcffd029266947f1b019245ec3a8aabd',client_id='847de36f322d48cfb6b22f213925fd71'))
+    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
     results = spotify.search(q='artist:' + name, type='artist')
     items = results['artists']['items']
     if len(items) > 0:

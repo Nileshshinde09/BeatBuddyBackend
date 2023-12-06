@@ -157,5 +157,5 @@ def topAlbum():
         response.headers.add('Access-Control-Allow-Credentials', 'true')
         return response
                              
-if __name__=="__main__":
-    app.run()
+# if __name__=="__main__":
+#     app.run()
